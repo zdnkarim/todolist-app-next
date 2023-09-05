@@ -1,0 +1,19 @@
+ambil refresh token dari cookie
+refreh token ada?{
+    refresh token bisa?{
+        ambil access token authorization
+        token benar?{
+            next
+        }
+        token expired?{
+            update token
+            next
+        }
+        token ga ada || token malformed?{
+            unauthorized
+        }
+    }
+    logout
+}
+logout
+
