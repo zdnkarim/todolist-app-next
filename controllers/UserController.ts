@@ -83,7 +83,7 @@ export const login = async (req: NextRequest) => {
       accessToken: access,
     };
     cookies().set("RefreshToken", refresh, { maxAge: 24 * 60 * 60 });
-    return response(200, data, `Successfully logged in as ${name}`);
+    return response(200, data, `Successfully logged in as ${userName}`);
   } catch (error: any) {
     if (error.name === "PrismaClientKnownRequestError") {
       return response(400, `${error.meta.target} is exist`, "error");
